@@ -7,10 +7,10 @@ function LeftControl() {
 
         </div>
         <div className='grid grid-cols-3 grid-cols-3 gap-2 mt-1'>
-            <button className='col-start-1 row-start-2 cursor-pointer w-7 h-7 rounded-full border-4 border-black-500'>{"<"}</button>
-            <button className='col-start-2 row-start-1 cursor-pointer w-7 h-7 rounded-full border-4 border-black-500'>^</button>
-            <button className='col-start-3 row-start-2 cursor-pointer w-7 h-7 rounded-full border-4 border-black-500'>{">"}</button>
-            <button className='col-start-2 row-start-3 cursor-pointer w-7 h-7 rounded-full border-4 border-black-500'>{"v"}</button>
+            <button className='col-start-1 row-start-2 cursor-pointer w-7 h-7 rounded-full border-4 border-black-500 flex items-center justify-center'>{"<"}</button>
+            <button className='col-start-2 row-start-1 cursor-pointer w-7 h-7 rounded-full border-4 border-black-500 flex items-center justify-center'>^</button>
+            <button className='col-start-3 row-start-2 cursor-pointer w-7 h-7 rounded-full border-4 border-black-500 flex items-center justify-center'>{">"}</button>
+            <button className='col-start-2 row-start-3 cursor-pointer w-7 h-7 rounded-full border-4 border-black-500 flex items-center justify-center'>{"v"}</button>
 
         </div>
     </div>

@@ -14,6 +14,7 @@ function App() {
     <>
     <div className='flex'>
       <h1 className='text-3xl font-bold underline'>Hello world</h1>
+      
       <LeftControl />
       <Screen pokemones={data?.results}/>
       <RightControl />
