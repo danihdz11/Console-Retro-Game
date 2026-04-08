@@ -1,34 +1,62 @@
 import React from 'react'
 
-function LeftControl({handleDirection}) {
+function LeftControl({ handleDirection }) {
   return (
-    <div className='w-[100px] h-[300px] border-4 border-solid back bg-sky-500 rounded-l-2xl'>
-      <div className='w-6 h-6 flex items-center justify-center ml-auto'>
-        <div className='w-4 h-1 bg-black'></div>
+    <div className="switch-joycon switch-joycon--left">
+      <div className="flex shrink-0 justify-end pr-3 pt-4">
+        <div
+          className="h-1 w-6 rounded-sm"
+          style={{ background: 'var(--switch-button)' }}
+          aria-hidden
+        />
       </div>
 
-      <div className='flex items-center justify-center mb-4 mt-4'>
-        <div className='w-20 h-20 rounded-full border-5 border-black flex items-center justify-center'>
-          <div className='w-15 h-15 rounded-full bg-black'></div>
+      <div className="flex shrink-0 justify-center pt-2">
+        <div className="joycon-stick">
+          <div className="joycon-stick__cap" />
         </div>
       </div>
 
-      <div className='grid grid-cols-3 grid-cols-3 gap-2 mt-1'>
-        <button 
-        onClick={() => handleDirection('left')}
-        className='col-start-1 row-start-2 cursor-pointer w-7 h-7 rounded-full text-white bg-black flex items-center justify-center'>{"<"}</button>
-        <button 
-        onClick={() => handleDirection('up')}
-        className='col-start-2 row-start-1 cursor-pointer w-7 h-7 rounded-full text-white bg-black flex items-center justify-center'>^</button>
-        <button 
-        onClick={() => handleDirection('right')}
-        className='col-start-3 row-start-2 cursor-pointer w-7 h-7 rounded-full text-white bg-black flex items-center justify-center'>{">"}</button>
-        <button 
-        onClick={() => handleDirection('down')}
-        className='col-start-2 row-start-3 cursor-pointer w-7 h-7 rounded-full text-white bg-black flex items-center justify-center'>{"v"}</button>
+      <div className="flex min-h-0 flex-1 flex-col justify-center py-2">
+        <div className="joycon-diamond">
+          <button
+            type="button"
+            onClick={() => handleDirection('up')}
+            className="joycon-diamond__btn joycon-diamond__btn--up cursor-pointer text-sm text-neutral-300"
+            style={{ background: 'var(--switch-button)' }}
+          >
+            ^
+          </button>
+          <button
+            type="button"
+            onClick={() => handleDirection('down')}
+            className="joycon-diamond__btn joycon-diamond__btn--down cursor-pointer text-sm text-neutral-300"
+            style={{ background: 'var(--switch-button)' }}
+          >
+            v
+          </button>
+          <button
+            type="button"
+            onClick={() => handleDirection('left')}
+            className="joycon-diamond__btn joycon-diamond__btn--left cursor-pointer text-sm text-neutral-300"
+            style={{ background: 'var(--switch-button)' }}
+          >
+            &lt;
+          </button>
+          <button
+            type="button"
+            onClick={() => handleDirection('right')}
+            className="joycon-diamond__btn joycon-diamond__btn--right cursor-pointer text-sm text-neutral-300"
+            style={{ background: 'var(--switch-button)' }}
+          >
+            &gt;
+          </button>
+        </div>
       </div>
 
-      <div className='w-5 h-5 border-2 border-black-500'></div>
+      <div className="flex shrink-0 justify-end pr-3 pb-4">
+        <div className="joycon-capture" aria-hidden />
+      </div>
     </div>
   )
 }

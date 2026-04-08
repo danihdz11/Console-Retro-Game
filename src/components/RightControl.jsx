@@ -1,31 +1,71 @@
 import React from 'react'
 
-function RightControl({handleSelection}) {
+function RightControl({ handleSelection }) {
   return (
-    <div className='w-[100px] h-[300px] border-4 border-solid bg-red-500 rounded-r-2xl'>
-      <div className='w-6 h-6 flex items-center justify-center relative'>
-        <div className='absolute w-1 h-4 bg-black'></div>
-        <div className='absolute w-4 h-1 bg-black'></div>
-      </div>
-    
-      <div className='grid grid-cols-3 grid-cols-3 gap-2 mt-4'>
-        <button className='col-start-2 row-start-1 cursor-pointer w-7 h-7 rounded-full border-3 border-black-500 flex items-center justify-center hover:bg-gray-500'>X</button>
-        <button className='col-start-1 row-start-2 cursor-pointer w-7 h-7 rounded-full border-3 border-black-500 flex items-center justify-center'>Y</button>
-        <button className='col-start-2 row-start-3 cursor-pointer w-7 h-7 rounded-full border-3 border-black-500 flex items-center justify-center'>B</button>
-        <button 
-        onClick={handleSelection}
-        className='col-start-3 row-start-2 cursor-pointer w-7 h-7 rounded-full border-3 border-black-500 flex items-center justify-center'>A</button>
+    <div className="switch-joycon switch-joycon--right">
+      <div className="flex shrink-0 pl-4 pt-4">
+        <div className="joycon-plus" aria-hidden />
       </div>
 
-      <div className='flex items-center justify-center mt-4'>
-        <div className='w-20 h-20 rounded-full border-5 border-black-500 flex items-center justify-center'>
-          <div className='w-15 h-15 rounded-full border-2 border-black'></div>
+      <div className="flex shrink-0 justify-center pt-2">
+        <div className="joycon-diamond">
+          <button
+            type="button"
+            className="joycon-diamond__btn joycon-diamond__btn--up cursor-pointer text-[15px] font-semibold text-neutral-400 hover:brightness-110"
+            style={{
+              background: 'var(--switch-button)',
+              border: '2px solid #252525',
+            }}
+          >
+            X
+          </button>
+          <button
+            type="button"
+            className="joycon-diamond__btn joycon-diamond__btn--down cursor-pointer text-[15px] font-semibold text-neutral-400 hover:brightness-110"
+            style={{
+              background: 'var(--switch-button)',
+              border: '2px solid #252525',
+            }}
+          >
+            B
+          </button>
+          <button
+            type="button"
+            className="joycon-diamond__btn joycon-diamond__btn--left cursor-pointer text-[15px] font-semibold text-neutral-400 hover:brightness-110"
+            style={{
+              background: 'var(--switch-button)',
+              border: '2px solid #252525',
+            }}
+          >
+            Y
+          </button>
+          <button
+            type="button"
+            onClick={handleSelection}
+            className="joycon-diamond__btn joycon-diamond__btn--right cursor-pointer text-[15px] font-semibold text-neutral-400 hover:brightness-110"
+            style={{
+              background: 'var(--switch-button)',
+              border: '2px solid #252525',
+            }}
+          >
+            A
+          </button>
         </div>
       </div>
-      
-      <div className='w-6 h-6 rounded-full border-2 border-black-500'></div>
-      <div className='w-5 h-5 border-2 border-black-500'></div>
 
+      <div className="flex min-h-0 flex-1 flex-col justify-center pb-2">
+        <div className="flex justify-center">
+          <div className="joycon-stick">
+            <div className="joycon-stick__cap" />
+          </div>
+        </div>
+      </div>
+
+      <div className="flex shrink-0 pl-3 pb-4">
+        <div className="joycon-home">
+          <span aria-hidden>⌂</span>
+        </div>
+      </div>
     </div>
   )
 }

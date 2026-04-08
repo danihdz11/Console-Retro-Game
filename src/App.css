@@ -1,0 +1,215 @@
+/* Nintendo Switch – colores referencia + layout */
+
+:root {
+  --switch-neon-blue: #00bee8;
+  --switch-neon-red: #ff5f53;
+  --switch-bezel: #1a1a1a;
+  --switch-button: #333333;
+  --switch-screen-bg: #2a2a2a;
+  --switch-console-h: 434px;
+  --switch-joycon-w: 144px;
+  --switch-tablet-w: 680px;
+  --switch-screen-inner-h: 360px;
+}
+
+.switch-console {
+  display: flex;
+  align-items: stretch;
+  filter: drop-shadow(0 16px 32px rgba(0, 0, 0, 0.38));
+}
+
+
+.switch-joycon {
+  box-sizing: border-box;
+  position: relative;
+  display: flex;
+  width: var(--switch-joycon-w);
+  height: var(--switch-console-h);
+  flex-direction: column;
+  border: 3px solid rgba(0, 0, 0, 0.14);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.22);
+}
+
+.switch-joycon--left {
+  background: var(--switch-neon-blue);
+  border-radius: 28px 0 0 28px;
+  border-right-width: 0;
+}
+
+.switch-joycon--right {
+  background: var(--switch-neon-red);
+  border-radius: 0 28px 28px 0;
+  border-left-width: 0;
+}
+
+
+.switch-tablet {
+  box-sizing: border-box;
+  display: flex;
+  width: var(--switch-tablet-w);
+  height: var(--switch-console-h);
+  flex-direction: column;
+  flex-shrink: 0;
+  padding: 10px 18px 22px;
+  background: var(--switch-bezel);
+  border-radius: 2px;
+  box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.6);
+}
+
+.switch-tablet__rail {
+  display: flex;
+  height: 12px;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 14px;
+  padding: 0 6px 8px;
+  opacity: 0.85;
+}
+
+.switch-tablet__bump {
+  width: 5px;
+  height: 5px;
+  border-radius: 1px;
+  background: #2d2d2d;
+}
+
+.switch-tablet__bump--wide {
+  width: 22px;
+  height: 4px;
+}
+
+.switch-tablet__screen-well {
+  overflow: hidden;
+  width: 100%;
+  height: var(--switch-screen-inner-h);
+  flex-shrink: 0;
+  border-radius: 3px;
+  background: var(--switch-screen-bg);
+  box-shadow: inset 0 2px 8px rgba(0, 0, 0, 0.5);
+}
+
+.switch-screen-inner {
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+  overflow-y: auto;
+}
+
+
+.joycon-plus {
+  width: 22px;
+  height: 22px;
+  background:
+    linear-gradient(var(--switch-button), var(--switch-button)) center / 3px
+      14px no-repeat,
+    linear-gradient(var(--switch-button), var(--switch-button)) center / 14px 3px
+      no-repeat;
+  border-radius: 2px;
+}
+
+
+.joycon-stick {
+  display: flex;
+  width: 92px;
+  height: 92px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 9999px;
+  border: 5px solid var(--switch-button);
+  background: rgba(0, 0, 0, 0.06);
+  box-shadow:
+    inset 0 3px 6px rgba(0, 0, 0, 0.35),
+    0 2px 4px rgba(0, 0, 0, 0.15);
+}
+
+.joycon-stick__cap {
+  width: 62px;
+  height: 62px;
+  border-radius: 9999px;
+  background: var(--switch-button);
+  box-shadow: inset 0 -3px 6px rgba(0, 0, 0, 0.4);
+}
+
+
+.joycon-capture {
+  display: flex;
+  width: 22px;
+  height: 22px;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid var(--switch-button);
+  background: var(--switch-button);
+  box-shadow:
+    inset 0 0 0 2px rgba(0, 0, 0, 0.35),
+    inset 0 0 4px rgba(255, 255, 255, 0.08);
+}
+
+.joycon-capture::after {
+  content: "";
+  display: block;
+  width: 8px;
+  height: 8px;
+  flex-shrink: 0;
+  border-radius: 9999px;
+  background: #1f1f1f;
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.8);
+}
+
+
+.joycon-diamond {
+  position: relative;
+  width: 110px;
+  height: 110px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.joycon-diamond__btn {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 38px;
+  height: 38px;
+  padding: 0;
+  border-radius: 9999px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.joycon-diamond__btn--up {
+  transform: translate(-50%, calc(-50% - 42px));
+}
+
+.joycon-diamond__btn--down {
+  transform: translate(-50%, calc(-50% + 42px));
+}
+
+.joycon-diamond__btn--left {
+  transform: translate(calc(-50% - 42px), -50%);
+}
+
+.joycon-diamond__btn--right {
+  transform: translate(calc(-50% + 42px), -50%);
+}
+
+.joycon-home {
+  display: flex;
+  width: 34px;
+  height: 34px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 9999px;
+  border: 2px solid var(--switch-button);
+  background: var(--switch-button);
+  color: #c8c8c8;
+  box-shadow:
+    0 0 0 3px rgba(0, 0, 0, 0.12),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+}
+
+.joycon-home span {
+  font-size: 13px;
+  line-height: 1;
+}

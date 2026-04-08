@@ -68,12 +68,24 @@ function App() {
   }
 
   return (
-    <div className="flex items-center justify-center min-h-screen">
-      <LeftControl handleDirection={handleDirection}/>
-      {myPokeSelection.length && pcPokeSelection.length ? ( <GameScreen myPokeSelection={myPokeSelection} pcPokeSelection={pcPokeSelection} />) : 
-      (<Screen pokemones={pokemones} position={position}/>)}
-
-      <RightControl handleSelection={handleSelection}/>
+    <div className="flex min-h-screen items-center justify-center bg-neutral-400 p-6">
+      <div className="switch-console">
+        <LeftControl handleDirection={handleDirection} />
+        <div className="switch-tablet">
+          <div className="switch-tablet__rail" aria-hidden>
+            <span className="switch-tablet__bump" />
+            <span className="switch-tablet__bump switch-tablet__bump--wide" />
+          </div>
+          <div className="switch-tablet__screen-well">
+            {myPokeSelection.length && pcPokeSelection.length ? (
+              <GameScreen myPokeSelection={myPokeSelection} pcPokeSelection={pcPokeSelection} />
+            ) : (
+              <Screen pokemones={pokemones} position={position} />
+            )}
+          </div>
+        </div>
+        <RightControl handleSelection={handleSelection} />
+      </div>
     </div>
   );
 }
