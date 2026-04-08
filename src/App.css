@@ -1,3 +1,17 @@
+.app-shell {
+  display: flex;
+  min-height: 100vh;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  background-color: #737373;
+  background-image: url("/images/videogame_background_2.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
 :root {
   --switch-neon-blue: #00bee8;
   --switch-neon-red: #ff5f53;

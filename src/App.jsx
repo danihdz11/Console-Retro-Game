@@ -74,7 +74,7 @@ function App() {
   }
 
   return (
-    <div className="flex min-h-screen items-center justify-center bg-neutral-400 p-6">
+    <div className="app-shell">
       <div className="switch-console">
         <LeftControl handleDirection={handleDirection} />
         <div className="switch-tablet">
