@@ -15,7 +15,7 @@ function GameScreen({ myPokeSelection, pcPokeSelection }) {
               <p className="mt-1 capitalize">{pokemon.name}</p>
             </div>
           ))}
-          <h2 className="text-2xl font-bold tracking-widest text-neutral-500">VS</h2>
+          <h2 className="text-2xl font-bold tracking-widest text-white">VS</h2>
           {pcPokeSelection?.map((pokemon, index) => (
             <div key={index} className="flex flex-col items-center" >
               <img
