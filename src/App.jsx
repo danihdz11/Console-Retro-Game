@@ -24,8 +24,7 @@ function App() {
   }, [data]);
 
   return (
-    <div className="flex">
-      <h1 className="text-3xl font-bold underline">Hello World</h1>
+    <div className="flex items-center justify-center min-h-screen">
       <LeftControl />
       <Screen pokemones={pokemones} />
       <RightControl />
