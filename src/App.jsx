@@ -70,7 +70,9 @@ function App() {
   return (
     <div className="flex items-center justify-center min-h-screen">
       <LeftControl handleDirection={handleDirection}/>
-      {myPokeSelection.length && pcPokeSelection.length ? ( <GameScreen />) : (<Screen pokemones={pokemones} position={position}/>)}
+      {myPokeSelection.length && pcPokeSelection.length ? ( <GameScreen myPokeSelection={myPokeSelection} pcPokeSelection={pcPokeSelection} />) : 
+      (<Screen pokemones={pokemones} position={position}/>)}
+
       <RightControl handleSelection={handleSelection}/>
     </div>
   );
