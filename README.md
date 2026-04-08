@@ -16,6 +16,7 @@ A retro-style console UI that shows a grid of Pokémon fetched from the [PokéAP
   - Your chosen Pokémon is shown.
   - The computer picks a random Pokémon from the 100.
   - The screen shows the battle view with **VS** between both.
+  ![VS console view](./public/images/vs_console.png)
 
 - **Home button** (**H** on the right Joy-Con): returns to the list, resets the position to the first Pokémon, and clears the battle selection.
 
