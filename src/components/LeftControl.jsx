@@ -17,11 +17,15 @@ function LeftControl({handleDirection}) {
         <button 
         onClick={() => handleDirection('left')}
         className='col-start-1 row-start-2 cursor-pointer w-7 h-7 rounded-full text-white bg-black flex items-center justify-center'>{"<"}</button>
-        <button className='col-start-2 row-start-1 cursor-pointer w-7 h-7 rounded-full text-white bg-black flex items-center justify-center'>^</button>
+        <button 
+        onClick={() => handleDirection('up')}
+        className='col-start-2 row-start-1 cursor-pointer w-7 h-7 rounded-full text-white bg-black flex items-center justify-center'>^</button>
         <button 
         onClick={() => handleDirection('right')}
         className='col-start-3 row-start-2 cursor-pointer w-7 h-7 rounded-full text-white bg-black flex items-center justify-center'>{">"}</button>
-        <button className='col-start-2 row-start-3 cursor-pointer w-7 h-7 rounded-full text-white bg-black flex items-center justify-center'>{"v"}</button>
+        <button 
+        onClick={() => handleDirection('down')}
+        className='col-start-2 row-start-3 cursor-pointer w-7 h-7 rounded-full text-white bg-black flex items-center justify-center'>{"v"}</button>
       </div>
 
       <div className='w-5 h-5 border-2 border-black-500'></div>

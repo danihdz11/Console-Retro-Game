@@ -33,12 +33,19 @@ function App() {
 
   const handleDirection = (direction) => {
 
-    if (direction === 'right') {
+    if (direction === 'right' && position + 1 < 101) {
       setPosition((prev) => prev + 1)
-    } else {
+    } else if (direction === 'up' && position - 4 > 0) {
+      setPosition((prev) => prev - 4)
+    } else if (direction === 'left' && position - 1 > 0) {
       setPosition((prev) => prev - 1)
+    } else if (direction === 'down' && position + 4 < 101) {
+      setPosition((prev) => prev + 4)
+    } else {
+      setPosition(1)
     }
   }
+
 
   function getRandomInt(min, max) {
     const minCeiled = Math.ceil(min);

@@ -10,12 +10,12 @@ const Screen = ({ pokemones, position }) => {
             <div key={index} 
                 style={{color: position === pokemon.id ? "red" : "white"}}
                 className="flex flex-col border-2" >
-              <p>{pokemon.name}</p>
               <img
                 src={pokemon?.sprites?.front_default}
                 alt={pokemon.name}
                 className="w-25 h-25"
               />
+              <p>{pokemon.name}</p>
             </div>
           ))}
         </div>
