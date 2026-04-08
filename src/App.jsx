@@ -67,6 +67,12 @@ function App() {
     computerSelection()
   }
 
+  const handleHome = () => {
+    setPosition(1)
+    setMyPokeSelection([])
+    setPcPokeSelection([])
+  }
+
   return (
     <div className="flex min-h-screen items-center justify-center bg-neutral-400 p-6">
       <div className="switch-console">
@@ -84,7 +90,7 @@ function App() {
             )}
           </div>
         </div>
-        <RightControl handleSelection={handleSelection} />
+        <RightControl handleSelection={handleSelection} handleHome={handleHome} />
       </div>
     </div>
   );

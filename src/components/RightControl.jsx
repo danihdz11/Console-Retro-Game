@@ -1,6 +1,6 @@
 import React from 'react'
 
-function RightControl({ handleSelection }) {
+function RightControl({ handleSelection, handleHome }) {
   return (
     <div className="switch-joycon switch-joycon--right">
       <div className="flex shrink-0 pl-4 pt-4">
@@ -10,46 +10,34 @@ function RightControl({ handleSelection }) {
       <div className="flex shrink-0 justify-center pt-2">
         <div className="joycon-diamond">
           <button
-            type="button"
             className="joycon-diamond__btn joycon-diamond__btn--up cursor-pointer text-[15px] font-semibold text-neutral-400 hover:brightness-110"
             style={{
               background: 'var(--switch-button)',
               border: '2px solid #252525',
             }}
-          >
-            X
-          </button>
+          >X</button>
           <button
-            type="button"
             className="joycon-diamond__btn joycon-diamond__btn--down cursor-pointer text-[15px] font-semibold text-neutral-400 hover:brightness-110"
             style={{
               background: 'var(--switch-button)',
               border: '2px solid #252525',
             }}
-          >
-            B
-          </button>
+          >B</button>
           <button
-            type="button"
             className="joycon-diamond__btn joycon-diamond__btn--left cursor-pointer text-[15px] font-semibold text-neutral-400 hover:brightness-110"
             style={{
               background: 'var(--switch-button)',
               border: '2px solid #252525',
             }}
-          >
-            Y
-          </button>
+          >Y</button>
           <button
-            type="button"
             onClick={handleSelection}
             className="joycon-diamond__btn joycon-diamond__btn--right cursor-pointer text-[15px] font-semibold text-neutral-400 hover:brightness-110"
             style={{
               background: 'var(--switch-button)',
               border: '2px solid #252525',
             }}
-          >
-            A
-          </button>
+          >A</button>
         </div>
       </div>
 
@@ -62,9 +50,14 @@ function RightControl({ handleSelection }) {
       </div>
 
       <div className="flex shrink-0 pl-3 pb-4">
-        <div className="joycon-home">
-          <span aria-hidden>⌂</span>
-        </div>
+        <button
+          type="button"
+          onClick={handleHome}
+          className="joycon-home hover:brightness-110 active:brightness-95 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white/50"
+          aria-label="Volver al inicio: primera página de Pokémon"
+        >
+          <span aria-hidden>H</span>
+        </button>
       </div>
     </div>
   )

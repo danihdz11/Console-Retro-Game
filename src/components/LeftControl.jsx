@@ -20,37 +20,25 @@ function LeftControl({ handleDirection }) {
       <div className="flex min-h-0 flex-1 flex-col justify-center py-2">
         <div className="joycon-diamond">
           <button
-            type="button"
             onClick={() => handleDirection('up')}
             className="joycon-diamond__btn joycon-diamond__btn--up cursor-pointer text-sm text-neutral-300"
             style={{ background: 'var(--switch-button)' }}
-          >
-            ^
-          </button>
+          >^</button>
           <button
-            type="button"
             onClick={() => handleDirection('down')}
             className="joycon-diamond__btn joycon-diamond__btn--down cursor-pointer text-sm text-neutral-300"
             style={{ background: 'var(--switch-button)' }}
-          >
-            v
-          </button>
+          >v</button>
           <button
-            type="button"
             onClick={() => handleDirection('left')}
             className="joycon-diamond__btn joycon-diamond__btn--left cursor-pointer text-sm text-neutral-300"
             style={{ background: 'var(--switch-button)' }}
-          >
-            &lt;
-          </button>
+          >{"<"}</button>
           <button
-            type="button"
             onClick={() => handleDirection('right')}
             className="joycon-diamond__btn joycon-diamond__btn--right cursor-pointer text-sm text-neutral-300"
             style={{ background: 'var(--switch-button)' }}
-          >
-            &gt;
-          </button>
+          >{">"}</button>
         </div>
       </div>
 
