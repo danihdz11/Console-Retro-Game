@@ -1,16 +1,29 @@
-# React + Vite
+# Console Retro Game
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A retro-style console UI that shows a grid of Pokémon fetched from the [PokéAPI](https://pokeapi.co/). Built with **React**, **Vite**, and **Tailwind CSS**.
 
-Currently, two official plugins are available:
+![Project console view](./public/images/my_console.png)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Features
 
-## React Compiler
+- **Grid navigation** (left Joy-Con, D-pad): move through the list of 100 Pokémon on a 4-column grid.
+  - **Up** / **Down**: jump one row (position changes by ±4).
+  - **Left** / **Right**: move one Pokémon at a time (position changes by ±1).
+  - The selected Pokémon is highlighted in a different color.
+  - If you try to move outside valid bounds, the selection resets to the starting position (1).
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- **A button** (right Joy-Con): confirms the Pokémon you are on. Then:
+  - Your chosen Pokémon is shown.
+  - The computer picks a random Pokémon from the 100.
+  - The screen shows the battle view with **VS** between both.
 
-## Expanding the ESLint configuration
+- **Home button** (**H** on the right Joy-Con): returns to the list, resets the position to the first Pokémon, and clears the battle selection.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+The **X**, **Y**, and **B** buttons are visible in the UI but have no action in this version.
+
+## Running the project
+
+```bash
+npm install
+npm run dev
+```
