@@ -9,7 +9,7 @@ const useFetch = (url) => {
     const getData = async () => {
       setLoading(true);
       try {
-        const res = await fetch(url);
+        const res = await fetch(url); // hago un pequeña pausa en lo que la API me regresa la información
         if (!res.ok) {
           throw new Error(res.status);
         }

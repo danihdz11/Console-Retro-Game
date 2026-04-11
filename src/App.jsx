@@ -5,6 +5,7 @@ import RightControl from './components/RightControl';
 import Screen from './components/Screen';
 import useFetch from './hooks/useFetch';
 import GameScreen from './components/GameScreen';
+import PokemonDetails from './components/PokemonDetails';
 
 function App() {
   const url = 'https://pokeapi.co/api/v2/pokemon?limit=100&offset=0';
@@ -15,9 +16,24 @@ function App() {
   const getListPokemones = () => {
     const list = data?.results?.filter((p) => p.url);
     const plist = list?.map((l) => fetch(l.url).then((res) => res.json()));
+
     Promise.all(plist).then((values) => {
-      console.log('promesa values', values);
-      setPokemones(values);
+      const saniData = values?.map((e) => {
+        return {
+          name: e.name,
+          id: e.id,
+          types: e.types,
+          moves: e.moves.map((e) => {
+            return {
+              ...e,
+              attack: getRandomInt(20, 100),
+            };
+          }),
+          sprites: e.sprites,
+        };
+      });
+
+      setPokemones(saniData);
     });
   };
 
@@ -73,6 +89,8 @@ function App() {
     setPcPokeSelection([])
   }
 
+  const highlightedPokemon = pokemones.filter((p) => p.id === position)
+
   return (
     <div className="app-shell">
       <div className="switch-console">
@@ -92,6 +110,11 @@ function App() {
         </div>
         <RightControl handleSelection={handleSelection} handleHome={handleHome} />
       </div>
+      {!(myPokeSelection.length && pcPokeSelection.length) && (
+        <div>
+          <PokemonDetails actual={highlightedPokemon} />
+        </div>
+      )}
     </div>
   );
 }
