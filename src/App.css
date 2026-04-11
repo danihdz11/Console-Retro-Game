@@ -316,3 +316,107 @@ button.joycon-home {
   color: #333;
   white-space: nowrap;
 }
+
+/* GameScreen: batalla */
+.game-screen {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: flex-start;
+  gap: 12px;
+  padding: 10px 12px;
+  color: #e5e5e5;
+  font-size: 13px;
+}
+
+.game-screen-battle {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 12px 20px;
+}
+
+.game-screen-fighter {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 100px;
+}
+
+.game-screen-hp {
+  margin: 0 0 4px 0;
+  font-weight: 600;
+  color: #fff;
+}
+
+.game-screen-sprite {
+  width: 112px;
+  height: 112px;
+  object-fit: contain;
+  image-rendering: pixelated;
+}
+
+.game-screen-name {
+  margin: 4px 0 0 0;
+  text-transform: capitalize;
+}
+
+.game-screen-vs {
+  margin: 0;
+  align-self: center;
+  font-size: 1.25rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  color: #fff;
+}
+
+.game-screen-actions {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 8px;
+  margin-top: auto;
+  padding-top: 4px;
+}
+
+.game-screen-attack-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2px;
+  padding: 8px 6px;
+  border: 2px solid #555;
+  border-radius: 8px;
+  background: #3a3a3a;
+  color: #eee;
+  font-size: 11px;
+  cursor: pointer;
+}
+
+.game-screen-attack-btn:hover:not(:disabled) {
+  background: #4a4a4a;
+  border-color: #777;
+}
+
+.game-screen-attack-btn:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+.game-screen-attack-name {
+  text-transform: capitalize;
+}
+
+.game-screen-attack-pow {
+  opacity: 0.85;
+  font-size: 10px;
+}
+
+.game-screen-winner {
+  margin: 8px 0 0;
+  text-align: center;
+  font-weight: 700;
+  font-size: 15px;
+  color: #fff;
+}
